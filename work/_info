@@ -1,0 +1,518 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.1
+Ebaudrategenerator
+Z0 w1733202210
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\UART-Project
+Z5 8C:/UART-Project/baudrategenerator.vhd
+Z6 FC:/UART-Project/baudrategenerator.vhd
+l0
+L5
+V@QMQ1m_RCcCk5lDFB_cCR3
+Z7 OV;C;10.1d;51
+32
+Z8 !s108 1733263994.603000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/baudrategenerator.vhd|
+Z10 !s107 C:/UART-Project/baudrategenerator.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+!s100 o`DfWDiDlzgMnDI0D>`5N0
+!i10b 1
+Artl
+R1
+R2
+R3
+DEx4 work 17 baudrategenerator 0 22 @QMQ1m_RCcCk5lDFB_cCR3
+l28
+L12
+V@f]P[<6JB56PU:QICGWLN1
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 A;lDPfjjk;ZP2jQWI2CkH0
+!i10b 1
+Edividebyn
+Z13 w1733199836
+R1
+R2
+R3
+R4
+Z14 8C:/UART-Project/DividebyN.vhd
+Z15 FC:/UART-Project/DividebyN.vhd
+l0
+L5
+VY>1=aAGK2Tm@FMb8O[T>61
+R7
+32
+Z16 !s108 1733263994.761000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/DividebyN.vhd|
+Z18 !s107 C:/UART-Project/DividebyN.vhd|
+R11
+R12
+!s100 eb?ae>8@0:_]af@_Q7OPW0
+!i10b 1
+Abehav
+R1
+R2
+R3
+DEx4 work 9 dividebyn 0 22 Y>1=aAGK2Tm@FMb8O[T>61
+l14
+L11
+VJKf2>Pof_WN2>Vi@bLH_40
+R7
+32
+R16
+R17
+R18
+R11
+R12
+!s100 D9Z<VA`Vk9az;8[gTlF9h1
+!i10b 1
+Eenardff_2
+Z19 w1733249568
+R2
+R3
+R4
+Z20 8C:/UART-Project/enardFF_2.vhd
+Z21 FC:/UART-Project/enardFF_2.vhd
+l0
+L31
+VW45mLHZkgINE^UQaXmP5[3
+R7
+32
+Z22 !s108 1733263994.877000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/enardFF_2.vhd|
+Z24 !s107 C:/UART-Project/enardFF_2.vhd|
+R11
+R12
+!s100 LM:aJ[Ade62O^TDCQB2jH0
+!i10b 1
+Artl
+R2
+R3
+DEx4 work 9 enardff_2 0 22 W45mLHZkgINE^UQaXmP5[3
+l43
+L40
+V3clzVS[W5TXh[=;E;]4B51
+R7
+32
+R22
+R23
+R24
+R11
+R12
+!s100 n`NKG5gX7V@?eV@4dAU663
+!i10b 1
+Enbit2to1mux
+Z25 w1729213062
+R2
+R3
+R4
+Z26 8C:/UART-Project/nbit2to1mux.vhd
+Z27 FC:/UART-Project/nbit2to1mux.vhd
+l0
+L4
+VoGPhMH]O:7moS9n9>KSoi1
+R7
+32
+Z28 !s108 1733263995.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/nbit2to1mux.vhd|
+Z30 !s107 C:/UART-Project/nbit2to1mux.vhd|
+R11
+R12
+!s100 j<a9o16:N11_hW0cJ`9V62
+!i10b 1
+Abehav
+R2
+R3
+DEx4 work 11 nbit2to1mux 0 22 oGPhMH]O:7moS9n9>KSoi1
+l12
+L11
+VJNSVAi8>k`i;jL<I9ZF:<0
+R7
+32
+R28
+R29
+R30
+R11
+R12
+!s100 5V>?64WTFlkKI:^E^<JIW0
+!i10b 1
+Enbit8to1mux
+Z31 w1733199065
+R2
+R3
+R4
+Z32 8C:/UART-Project/nbit8to1mux.vhd
+Z33 FC:/UART-Project/nbit8to1mux.vhd
+l0
+L4
+VRQlNY57Z6D[?:Mh<z7OAi2
+R7
+32
+Z34 !s108 1733263995.107000
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/nbit8to1mux.vhd|
+Z36 !s107 C:/UART-Project/nbit8to1mux.vhd|
+R11
+R12
+!s100 a<IZW_hMgQP4Y]GTS3HB52
+!i10b 1
+Abehav
+R2
+R3
+DEx4 work 11 nbit8to1mux 0 22 RQlNY57Z6D[?:Mh<z7OAi2
+l12
+L11
+VK5XS=<TF]G]ehG;D7QXVO1
+R7
+32
+R34
+R35
+R36
+R11
+R12
+!s100 0G[YcOz0Q9LPF>nJa9GEH0
+!i10b 1
+Enbitcomparator
+Z37 w1733249435
+R2
+R3
+R4
+Z38 8C:/UART-Project/nbitcomparator.vhd
+Z39 FC:/UART-Project/nbitcomparator.vhd
+l0
+L4
+V[IJzAojTYjBAoa4YQYEE60
+R7
+32
+Z40 !s108 1733263995.238000
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/nbitcomparator.vhd|
+Z42 !s107 C:/UART-Project/nbitcomparator.vhd|
+R11
+R12
+!s100 @QkjFQna:moff2Fh8;m5S2
+!i10b 1
+Artl
+R2
+R3
+DEx4 work 14 nbitcomparator 0 22 [IJzAojTYjBAoa4YQYEE60
+l21
+L11
+VYL]j:G[TbAUWaZ6ko8Y]g0
+R7
+32
+R40
+R41
+R42
+R11
+R12
+!s100 Yk`@^l1F@fE@BgYbYmW[63
+!i10b 1
+Enbitreg
+Z43 w1729213176
+R2
+R3
+R4
+Z44 8C:/UART-Project/nbitreg.vhd
+Z45 FC:/UART-Project/nbitreg.vhd
+l0
+L4
+VYa4Y:JKC7TnMhUOU`JeZE2
+R7
+32
+Z46 !s108 1733263995.369000
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/nbitreg.vhd|
+Z48 !s107 C:/UART-Project/nbitreg.vhd|
+R11
+R12
+!s100 M=Hb>^1GOh0`eGMkYI^DR0
+!i10b 1
+Astruc
+R2
+R3
+DEx4 work 7 nbitreg 0 22 Ya4Y:JKC7TnMhUOU`JeZE2
+l24
+L12
+VGVI@93]::bYm:XS=A@0B@2
+R7
+32
+R46
+R47
+R48
+R11
+R12
+!s100 lUaZH_0dTcSgfNPN0L1`42
+!i10b 1
+Enbitshiftreg
+Z49 w1733260206
+R2
+R3
+R4
+Z50 8C:/UART-Project/nbitshiftreg.vhd
+Z51 FC:/UART-Project/nbitshiftreg.vhd
+l0
+L5
+V<`?DGhnPhlcIZ0@8>T:Xk3
+R7
+32
+Z52 !s108 1733263995.493000
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/nbitshiftreg.vhd|
+Z54 !s107 C:/UART-Project/nbitshiftreg.vhd|
+R11
+R12
+!s100 R47Bacnjz6W>EM>>Xz[gW1
+!i10b 1
+Astruc
+R2
+R3
+DEx4 work 12 nbitshiftreg 0 22 <`?DGhnPhlcIZ0@8>T:Xk3
+l32
+L13
+VjJM2EiXbgiORLkIEB^Kzj0
+R7
+32
+R52
+R53
+R54
+R11
+R12
+!s100 >34SzK4DlND]A9ijelXAN0
+!i10b 1
+Eonebit4to1mux
+Z55 w1729385000
+R2
+R3
+R4
+Z56 8C:/UART-Project/onebit4to1mux.vhd
+Z57 FC:/UART-Project/onebit4to1mux.vhd
+l0
+L4
+VY@VBI[e^<;5JC<G<>MVXg0
+R7
+32
+Z58 !s108 1733263995.601000
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/onebit4to1mux.vhd|
+Z60 !s107 C:/UART-Project/onebit4to1mux.vhd|
+R11
+R12
+!s100 l1oRkMNbXWL@`CeIDfTi80
+!i10b 1
+Abehav
+R2
+R3
+DEx4 work 13 onebit4to1mux 0 22 Y@VBI[e^<;5JC<G<>MVXg0
+l12
+L11
+V@RoTj7=84T=YIMQMjThgM0
+R7
+32
+R58
+R59
+R60
+R11
+R12
+!s100 _had[PaCe91gc[]]om^Vg2
+!i10b 1
+Eonebitadder
+Z61 w1729221772
+R2
+R3
+R4
+Z62 8C:/UART-Project/onebitadder.vhd
+Z63 FC:/UART-Project/onebitadder.vhd
+l0
+L4
+V<WPaMLJ_Q??nLET?Qn5W02
+R7
+32
+Z64 !s108 1733263995.709000
+Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/onebitadder.vhd|
+Z66 !s107 C:/UART-Project/onebitadder.vhd|
+R11
+R12
+!s100 ^;Sf0GfTon6YHh8A_k<lm1
+!i10b 1
+Artl
+R2
+R3
+DEx4 work 11 onebitadder 0 22 <WPaMLJ_Q??nLET?Qn5W02
+l14
+L11
+VMbkMHFWh@k3b7o@o6>i5k2
+R7
+32
+R64
+R65
+R66
+R11
+R12
+!s100 JTPBAS;T;2SHoZO]QHL]O3
+!i10b 1
+Eonebitcomparator
+Z67 w1733249442
+R2
+R3
+R4
+Z68 8C:/UART-Project/onebitcomparator.vhd
+Z69 FC:/UART-Project/onebitcomparator.vhd
+l0
+L31
+Va114[DTKdX[dS9GV3?VV>2
+R7
+32
+Z70 !s108 1733263995.823000
+Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/onebitcomparator.vhd|
+Z72 !s107 C:/UART-Project/onebitcomparator.vhd|
+R11
+R12
+!s100 <jX6<_c^nQ8XW_1O_gY[<1
+!i10b 1
+Artl
+R2
+R3
+DEx4 work 16 onebitcomparator 0 22 a114[DTKdX[dS9GV3?VV>2
+l42
+L38
+VA0g5UdUYmzdXnCE:h69Va3
+R7
+32
+R70
+R71
+R72
+R11
+R12
+!s100 8fVAI]h6XZcSDo?:0YWH41
+!i10b 1
+Ethreebitadder
+Z73 w1729332844
+R2
+R3
+R4
+Z74 8C:/UART-Project/threebitadder.vhd
+Z75 FC:/UART-Project/threebitadder.vhd
+l0
+L4
+VShI=ALZlXdJ`YkFIYDADk0
+R7
+32
+Z76 !s108 1733263995.937000
+Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/threebitadder.vhd|
+Z78 !s107 C:/UART-Project/threebitadder.vhd|
+R11
+R12
+!s100 h:5MEgNk7USGj3af3cJ2S2
+!i10b 1
+Artl
+R2
+R3
+DEx4 work 13 threebitadder 0 22 ShI=ALZlXdJ`YkFIYDADk0
+l22
+L11
+VFPVKdQ@^h:D@hn1gFCzWM3
+R7
+32
+R76
+R77
+R78
+R11
+R12
+!s100 goOANk:AVDlF56n@=SRK^0
+!i10b 1
+Ethreebitcounter
+Z79 w1729331225
+R2
+R3
+R4
+Z80 8C:/UART-Project/threebitcounter.vhd
+Z81 FC:/UART-Project/threebitcounter.vhd
+l0
+L4
+VFBla6GY:;HEzF:EmVDEC<2
+R7
+32
+Z82 !s108 1733263996.053000
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/threebitcounter.vhd|
+Z84 !s107 C:/UART-Project/threebitcounter.vhd|
+R11
+R12
+!s100 <h6mmTL2W:K8@fkf>gHQ`1
+!i10b 1
+Astruc
+R2
+R3
+DEx4 work 15 threebitcounter 0 22 FBla6GY:;HEzF:EmVDEC<2
+l28
+L9
+V<O5m[0OADWKd?oDb7e?9L2
+R7
+32
+R82
+R83
+R84
+R11
+R12
+!s100 I0LDfCN[bU7PKUH0VGTd92
+!i10b 1
+Etransmitter
+w1733262117
+R2
+R3
+R4
+8C:/UART-Project/transmitter.vhd
+FC:/UART-Project/transmitter.vhd
+l0
+L4
+VE:GBg4SF1D4AAR`PKZgT^0
+R7
+32
+R11
+R12
+!s100 ]j3Vnf7`;bECIoF1=Y6mo1
+!i10b 1
+!s108 1733263996.161000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/transmitter.vhd|
+!s107 C:/UART-Project/transmitter.vhd|
+Etransmitter_control
+Z85 w1733257563
+R2
+R3
+R4
+Z86 8C:/UART-Project/transmitter_control.vhd
+Z87 FC:/UART-Project/transmitter_control.vhd
+l0
+L4
+VzH>n_DTk`cn7ANQA;5b:Q2
+!s100 e[JDa6dMW_znoU106A;gE2
+R7
+32
+!i10b 1
+Z88 !s108 1733263996.259000
+Z89 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/UART-Project/transmitter_control.vhd|
+Z90 !s107 C:/UART-Project/transmitter_control.vhd|
+R11
+R12
+Artl
+R2
+R3
+DEx4 work 19 transmitter_control 0 22 zH>n_DTk`cn7ANQA;5b:Q2
+l12
+L10
+V<ze[EagRkXnGTDDP05jSU1
+!s100 ]==?Fg2]8UiHI@W>XgF<o1
+R7
+32
+!i10b 1
+R88
+R89
+R90
+R11
+R12
