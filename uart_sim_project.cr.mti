@@ -1,10 +1,34 @@
-C:/UART-Project/transmitter_control.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/transmitter_control.vhd
+C:/UART-Project/enardFF_resetToOne.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/enardFF_resetToOne.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity enARdFF_resetToOne
+-- Compiling architecture rtl of enARdFF_resetToOne
+
+} {} {}} C:/UART-Project/transmitter_control.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/transmitter_control.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Compiling entity transmitter_control
 -- Compiling architecture rtl of transmitter_control
+
+} {} {}} C:/UART-Project/nbitaddersubtractor.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/nbitaddersubtractor.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity nbitaddersubtractor
+-- Compiling architecture struc of nbitaddersubtractor
+
+} {} {}} C:/UART-Project/onebit8to1mux.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/onebit8to1mux.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity onebit8to1mux
+-- Compiling architecture behav of onebit8to1mux
 
 } {} {}} C:/UART-Project/baudrategenerator.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/baudrategenerator.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -30,6 +54,56 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 -- Compiling entity oneBitAdder
 -- Compiling architecture rtl of oneBitAdder
+
+} {} {}} C:/UART-Project/top_level.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/top_level.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity top_level
+-- Compiling architecture rtl of top_level
+
+} {} {}} C:/UART-Project/trafficlightcontroller.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/trafficlightcontroller.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity trafficlightcontroller
+-- Compiling architecture struc of trafficlightcontroller
+
+} {} {}} C:/UART-Project/fourbitcounter.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/fourbitcounter.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fourbitcounter
+-- Compiling architecture rtl of fourbitcounter
+
+} {} {}} C:/UART-Project/fourbitcomparator.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/fourbitcomparator.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity fourbitcomparator
+-- Compiling architecture RTL of fourbitcomparator
+
+} {} {}} C:/UART-Project/UART.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/UART.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity UART
+-- Compiling architecture rtl of UART
+
+} {} {}} C:/UART-Project/edge_detect.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/edge_detect.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity edge_detect
+-- Compiling architecture behav of edge_detect
 
 } {} {}} C:/UART-Project/transmitter.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/transmitter.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -64,6 +138,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity DividebyN
 -- Compiling architecture behav of DividebyN
 
+} {} {}} C:/UART-Project/debouncer.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/debouncer.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity debouncer
+-- Compiling architecture fsm of debouncer
+
 } {} {}} C:/UART-Project/threebitcounter.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/threebitcounter.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -79,6 +161,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 -- Compiling entity enARdFF_2
 -- Compiling architecture rtl of enARdFF_2
+
+} {} {}} C:/UART-Project/timer.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/timer.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity timer
+-- Compiling architecture struc of timer
 
 } {} {}} C:/UART-Project/nbitshiftreg.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/nbitshiftreg.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -96,6 +186,22 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity oneBitComparator
 -- Compiling architecture rtl of oneBitComparator
 
+} {} {}} C:/UART-Project/fsmController.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/fsmController.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fsmController
+-- Compiling architecture rtl of fsmController
+
+} {} {}} C:/UART-Project/fulladder.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/fulladder.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fulladder
+-- Compiling architecture behav of fulladder
+
 } {} {}} C:/UART-Project/nbit8to1mux.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/nbit8to1mux.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -104,14 +210,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity nbit8to1mux
 -- Compiling architecture behav of nbit8to1mux
 
-} {} {}} C:/UART-Project/nbitreg.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/nbitreg.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity nbitreg
--- Compiling architecture struc of nbitreg
-
 } {} {}} C:/UART-Project/onebit4to1mux.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/onebit4to1mux.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -119,5 +217,13 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 -- Compiling entity onebit4to1mux
 -- Compiling architecture behav of onebit4to1mux
+
+} {} {}} C:/UART-Project/nbitreg.vhd {1 {vcom -work work -2002 -explicit C:/UART-Project/nbitreg.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity nbitreg
+-- Compiling architecture struc of nbitreg
 
 } {} {}}

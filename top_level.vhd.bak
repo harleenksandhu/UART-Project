@@ -1,0 +1,40 @@
+library ieee; 
+use ieee.std_logic_1164.all;
+
+entity top_level is
+    port(--add lab 3 inputs and outputs
+         GClock, GReset, RxD: in std_logic; 
+         BaudRateSel: in std_logic_vector(2 downto 0);
+         TxD: out std_logic);
+end top_level;
+
+architecture rtl of top_level is
+signal int_debugmsg: std_logic_vector(7 downto 0);
+signal int_TxD, int_TDRE => std_logic;
+    component UART
+        port(i_clk, GReset, RxD: in std_logic;
+            DebugMsgByte: in std_logic_vector(7 downto 0);
+            BaudRateSel: in std_logic_vector(2 downto 0);
+            TxD, TDRE: out std_logic);
+    end component;
+
+    component nbit8to1mux
+        generic(n: integer:=8);
+        port( i: IN std_logic_vector(7 downto 0);
+            mux_sel: IN std_logic_vector(2 downto 0);
+            o : OUT std_logic);
+    end component;
+
+    component threebitcounter
+        port(inc_i, greset, clk: in std_logic;
+            count : out std_logic_vector(2 downto 0));
+    end component;
+
+begin
+    uart_block: UART
+        port map(i_clk => GClock, GReset => GReset, RxD => RxD, DebugMsgByte => int_debugmsg, 
+                BaudRateSel => BaudRateSel, TxD => int_TxD, TDRE => int_TDRE);
+    
+    mux: nbit8to1mux
+        generic map(n => 8)
+        port map()

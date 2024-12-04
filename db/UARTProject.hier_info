@@ -1,4 +1,184 @@
-|transmitter
+|top_level
+MSC[0] => trafficlightcontroller:lab3.MSC[0]
+MSC[1] => trafficlightcontroller:lab3.MSC[1]
+MSC[2] => trafficlightcontroller:lab3.MSC[2]
+MSC[3] => trafficlightcontroller:lab3.MSC[3]
+SSC[0] => trafficlightcontroller:lab3.SSC[0]
+SSC[1] => trafficlightcontroller:lab3.SSC[1]
+SSC[2] => trafficlightcontroller:lab3.SSC[2]
+SSC[3] => trafficlightcontroller:lab3.SSC[3]
+GClock => UART:uart_block.i_clk
+GClock => trafficlightcontroller:lab3.GClock
+GReset => UART:uart_block.GReset
+GReset => trafficlightcontroller:lab3.GReset
+SSCS => trafficlightcontroller:lab3.SSCS
+RxD => UART:uart_block.RxD
+BaudRateSel[0] => UART:uart_block.BaudRateSel[0]
+BaudRateSel[1] => UART:uart_block.BaudRateSel[1]
+BaudRateSel[2] => UART:uart_block.BaudRateSel[2]
+MSTL[0] <= trafficlightcontroller:lab3.MSTL[0]
+MSTL[1] <= trafficlightcontroller:lab3.MSTL[1]
+MSTL[2] <= trafficlightcontroller:lab3.MSTL[2]
+SSTL[0] <= trafficlightcontroller:lab3.SSTL[0]
+SSTL[1] <= trafficlightcontroller:lab3.SSTL[1]
+SSTL[2] <= trafficlightcontroller:lab3.SSTL[2]
+TxD <= UART:uart_block.TxD
+
+
+|top_level|UART:uart_block
+i_clk => baudrategenerator:baudrate.clk
+GReset => counter_reset.IN1
+GReset => edge_detect:detect_inc.reset
+GReset => transmitter:T.GReset
+GReset => enardFF_resetToOne:enable_tx.i_resetBar
+RxD => ~NO_FANOUT~
+DebugMsgByte[0] => transmitter:T.Data[0]
+DebugMsgByte[1] => transmitter:T.Data[1]
+DebugMsgByte[2] => transmitter:T.Data[2]
+DebugMsgByte[3] => transmitter:T.Data[3]
+DebugMsgByte[4] => transmitter:T.Data[4]
+DebugMsgByte[5] => transmitter:T.Data[5]
+DebugMsgByte[6] => transmitter:T.Data[6]
+DebugMsgByte[7] => transmitter:T.Data[7]
+BaudRateSel[0] => baudrategenerator:baudrate.sel[0]
+BaudRateSel[1] => baudrategenerator:baudrate.sel[1]
+BaudRateSel[2] => baudrategenerator:baudrate.sel[2]
+TxD <= transmitter:T.TxD
+TDRE <= transmitter:T.TDRE
+CharSel[0] <= threebitcounter:counter.count[0]
+CharSel[1] <= threebitcounter:counter.count[1]
+CharSel[2] <= threebitcounter:counter.count[2]
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate
+sel[0] => onebit8to1mux:mux.mux_sel[0]
+sel[1] => onebit8to1mux:mux.mux_sel[1]
+sel[2] => onebit8to1mux:mux.mux_sel[2]
+clk => DividebyN:divby41.i_clk
+bclkx8 <= onebit8to1mux:mux.o
+bclk <= DividebyN:divby8.o_clk
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41
+i_clk => int_clk.CLK
+i_clk => int_count[0].CLK
+i_clk => int_count[1].CLK
+i_clk => int_count[2].CLK
+i_clk => int_count[3].CLK
+i_clk => int_count[4].CLK
+i_clk => int_count[5].CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:7:divby256_k
+i_clk => int_clk.CLK
+i_clk => int_count.CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|onebit8to1mux:mux
+i_0 => o.DATAB
+i_1 => o.DATAB
+i_2 => o.DATAB
+i_3 => o.DATAB
+i_4 => o.DATAB
+i_5 => o.DATAB
+i_6 => o.DATAB
+i_7 => o.DATAA
+mux_sel[0] => Equal0.IN0
+mux_sel[0] => Equal1.IN2
+mux_sel[0] => Equal2.IN1
+mux_sel[0] => Equal3.IN2
+mux_sel[0] => Equal4.IN1
+mux_sel[0] => Equal5.IN2
+mux_sel[0] => Equal6.IN2
+mux_sel[1] => Equal0.IN2
+mux_sel[1] => Equal1.IN0
+mux_sel[1] => Equal2.IN0
+mux_sel[1] => Equal3.IN1
+mux_sel[1] => Equal4.IN2
+mux_sel[1] => Equal5.IN1
+mux_sel[1] => Equal6.IN1
+mux_sel[2] => Equal0.IN1
+mux_sel[2] => Equal1.IN1
+mux_sel[2] => Equal2.IN2
+mux_sel[2] => Equal3.IN0
+mux_sel[2] => Equal4.IN0
+mux_sel[2] => Equal5.IN0
+mux_sel[2] => Equal6.IN0
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8
+i_clk => int_clk.CLK
+i_clk => int_count[0].CLK
+i_clk => int_count[1].CLK
+i_clk => int_count[2].CLK
+o_clk <= int_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|edge_detect:detect_inc
+clk => edge_detected~reg0.CLK
+clk => signal_prev.CLK
+reset => signal_prev.OUTPUTSELECT
+reset => edge_detected.OUTPUTSELECT
+signal_in => process_0.IN1
+signal_in => signal_prev.DATAA
+edge_detected <= edge_detected~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|enARdFF_resetToOne:enable_tx
+i_resetBar => int_q.PRESET
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|transmitter:T
 BClk => nbitreg:TDR.clk
 BClk => nbitshiftreg:TSR.clk
 BClk => threebitcounter:counter.clk
@@ -19,7 +199,7 @@ TxD <= nbit2to1mux:output_mux.o[0]
 TDRE <= transmitter_control:controller.TDRE
 
 
-|transmitter|nbitreg:TDR
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR
 reset_b => enARdFF_2:reg:7:biti.i_resetBar
 reset_b => enARdFF_2:reg:6:biti.i_resetBar
 reset_b => enARdFF_2:reg:5:biti.i_resetBar
@@ -70,7 +250,7 @@ dout_b[6] <= enARdFF_2:reg:6:biti.o_qBar
 dout_b[7] <= enARdFF_2:reg:7:biti.o_qBar
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:7:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:7:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -79,7 +259,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:6:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:6:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -88,7 +268,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:5:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:5:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -97,7 +277,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:4:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:4:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -106,7 +286,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:3:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:3:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -115,7 +295,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:2:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:2:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -124,7 +304,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:1:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:1:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -133,7 +313,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitreg:TDR|enARdFF_2:\reg:0:biti
+|top_level|UART:uart_block|transmitter:T|nbitreg:TDR|enARdFF_2:\reg:0:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -142,7 +322,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR
 d_in[0] => onebit4to1mux:mux0.i_0
 d_in[1] => onebit4to1mux:muxes:1:muxi.i_0
 d_in[2] => onebit4to1mux:muxes:2:muxi.i_0
@@ -192,7 +372,7 @@ reset_b => enardFF_2:dffs:0:biti.i_resetBar
 s_out <= s_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:mux0
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:mux0
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -206,7 +386,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:muxn_1
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:muxn_1
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -220,7 +400,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:6:muxi
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:\muxes:6:muxi
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -234,7 +414,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:5:muxi
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:\muxes:5:muxi
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -248,7 +428,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:4:muxi
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:\muxes:4:muxi
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -262,7 +442,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:3:muxi
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:\muxes:3:muxi
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -276,7 +456,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:2:muxi
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:\muxes:2:muxi
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -290,7 +470,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:1:muxi
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|onebit4to1mux:\muxes:1:muxi
 i_0 => o.DATAB
 i_1 => o.DATAB
 i_2 => o.DATAB
@@ -304,7 +484,7 @@ sel2 => o.IN1
 o <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:7:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:7:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -313,7 +493,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:6:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:6:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -322,7 +502,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:5:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:5:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -331,7 +511,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:4:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:4:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -340,7 +520,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:3:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:3:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -349,7 +529,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:2:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:2:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -358,7 +538,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:1:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:1:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -367,7 +547,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:0:biti
+|top_level|UART:uart_block|transmitter:T|nbitshiftreg:TSR|enARdFF_2:\dffs:0:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -376,21 +556,21 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbit2to1mux:boundmux
+|top_level|UART:uart_block|transmitter:T|nbit2to1mux:boundmux
 i_0[0] => o.DATAB
 i_1[0] => o.DATAA
 sel1 => o.OUTPUTSELECT
 o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbit2to1mux:output_mux
+|top_level|UART:uart_block|transmitter:T|nbit2to1mux:output_mux
 i_0[0] => o.DATAB
 i_1[0] => o.DATAA
 sel1 => o.OUTPUTSELECT
 o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|threebitcounter:counter
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter
 inc_i => nbitreg:reg.load
 greset => nbitreg:reg.reset_b
 clk => nbitreg:reg.clk
@@ -399,7 +579,7 @@ count[1] <= nbitreg:reg.dout[1]
 count[2] <= nbitreg:reg.dout[2]
 
 
-|transmitter|threebitcounter:counter|threeBitAdder:adder
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|threeBitAdder:adder
 i_Ai[0] => oneBitAdder:add0.i_Ai
 i_Ai[1] => oneBitAdder:add1.i_Ai
 i_Ai[2] => oneBitAdder:add2.i_Ai
@@ -412,7 +592,7 @@ o_Sum[1] <= oneBitAdder:add1.o_Sum
 o_Sum[2] <= oneBitAdder:add2.o_Sum
 
 
-|transmitter|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add2
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add2
 i_CarryIn => int_CarryOut3.IN0
 i_CarryIn => int_CarryOut1.IN0
 i_Ai => int_CarryOut3.IN1
@@ -423,7 +603,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add1
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add1
 i_CarryIn => int_CarryOut3.IN0
 i_CarryIn => int_CarryOut1.IN0
 i_Ai => int_CarryOut3.IN1
@@ -434,7 +614,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add0
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add0
 i_CarryIn => int_CarryOut3.IN0
 i_CarryIn => int_CarryOut1.IN0
 i_Ai => int_CarryOut3.IN1
@@ -445,7 +625,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|threebitcounter:counter|nbitreg:reg
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|nbitreg:reg
 reset_b => enARdFF_2:reg:2:biti.i_resetBar
 reset_b => enARdFF_2:reg:1:biti.i_resetBar
 reset_b => enARdFF_2:reg:0:biti.i_resetBar
@@ -466,7 +646,7 @@ dout_b[1] <= enARdFF_2:reg:1:biti.o_qBar
 dout_b[2] <= enARdFF_2:reg:2:biti.o_qBar
 
 
-|transmitter|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:2:biti
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:2:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -475,7 +655,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:1:biti
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:1:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -484,7 +664,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:0:biti
+|top_level|UART:uart_block|transmitter:T|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:0:biti
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -493,7 +673,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitcomparator:comparator
+|top_level|UART:uart_block|transmitter:T|nbitcomparator:comparator
 A[0] => oneBitComparator:comparatorLoop:0:comparator_n.i_Ai
 A[1] => oneBitComparator:comparatorLoop:1:comparator_n.i_Ai
 A[2] => oneBitComparator:comparatorMSB.i_Ai
@@ -505,7 +685,7 @@ AgtB <= oneBitComparator:comparatorLoop:0:comparator_n.o_GT
 AltB <= oneBitComparator:comparatorLoop:0:comparator_n.o_LT
 
 
-|transmitter|nbitcomparator:comparator|oneBitComparator:comparatorMSB
+|top_level|UART:uart_block|transmitter:T|nbitcomparator:comparator|oneBitComparator:comparatorMSB
 i_GTPrevious => int_GT2.IN0
 i_GTPrevious => int_GT1.IN0
 i_GTPrevious => int_LT2.IN0
@@ -520,7 +700,7 @@ o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
 o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitcomparator:comparator|oneBitComparator:\comparatorLoop:1:comparator_n
+|top_level|UART:uart_block|transmitter:T|nbitcomparator:comparator|oneBitComparator:\comparatorLoop:1:comparator_n
 i_GTPrevious => int_GT2.IN0
 i_GTPrevious => int_GT1.IN0
 i_GTPrevious => int_LT2.IN0
@@ -535,7 +715,7 @@ o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
 o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|nbitcomparator:comparator|oneBitComparator:\comparatorLoop:0:comparator_n
+|top_level|UART:uart_block|transmitter:T|nbitcomparator:comparator|oneBitComparator:\comparatorLoop:0:comparator_n
 i_GTPrevious => int_GT2.IN0
 i_GTPrevious => int_GT1.IN0
 i_GTPrevious => int_LT2.IN0
@@ -550,21 +730,21 @@ o_GT <= int_GT.DB_MAX_OUTPUT_PORT_TYPE
 o_LT <= int_LT.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|transmitter_control:controller
+|top_level|UART:uart_block|transmitter:T|transmitter_control:controller
 GReset => enardFF_2:DFF_1.i_resetBar
 GReset => enardFF_2:DFF_0.i_resetBar
 BClk => enardFF_2:DFF_1.i_clock
 BClk => enardFF_2:DFF_0.i_clock
-endReached => w.IN0
+endReached => w.IN1
 Tx_start => w.IN1
 TDRE <= TDRE.DB_MAX_OUTPUT_PORT_TYPE
 loadTDR <= loadTDR.DB_MAX_OUTPUT_PORT_TYPE
-loadTSR <= enardFF_2:DFF_1.o_q
+loadTSR <= loadTSR.DB_MAX_OUTPUT_PORT_TYPE
 shiftTSR <= shiftTSR.DB_MAX_OUTPUT_PORT_TYPE
 selBounds <= enardFF_2:DFF_1.o_qBar
 
 
-|transmitter|transmitter_control:controller|enARdFF_2:DFF_1
+|top_level|UART:uart_block|transmitter:T|transmitter_control:controller|enARdFF_2:DFF_1
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -573,12 +753,995 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|transmitter|transmitter_control:controller|enARdFF_2:DFF_0
+|top_level|UART:uart_block|transmitter:T|transmitter_control:controller|enARdFF_2:DFF_0
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
 i_clock => int_q.CLK
 o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|threebitcounter:counter
+inc_i => nbitreg:reg.load
+greset => nbitreg:reg.reset_b
+clk => nbitreg:reg.clk
+count[0] <= nbitreg:reg.dout[0]
+count[1] <= nbitreg:reg.dout[1]
+count[2] <= nbitreg:reg.dout[2]
+
+
+|top_level|UART:uart_block|threebitcounter:counter|threeBitAdder:adder
+i_Ai[0] => oneBitAdder:add0.i_Ai
+i_Ai[1] => oneBitAdder:add1.i_Ai
+i_Ai[2] => oneBitAdder:add2.i_Ai
+i_Bi[0] => oneBitAdder:add0.i_Bi
+i_Bi[1] => oneBitAdder:add1.i_Bi
+i_Bi[2] => oneBitAdder:add2.i_Bi
+o_CarryOut <= oneBitAdder:add2.o_CarryOut
+o_Sum[0] <= oneBitAdder:add0.o_Sum
+o_Sum[1] <= oneBitAdder:add1.o_Sum
+o_Sum[2] <= oneBitAdder:add2.o_Sum
+
+
+|top_level|UART:uart_block|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add2
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add1
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add0
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|threebitcounter:counter|nbitreg:reg
+reset_b => enARdFF_2:reg:2:biti.i_resetBar
+reset_b => enARdFF_2:reg:1:biti.i_resetBar
+reset_b => enARdFF_2:reg:0:biti.i_resetBar
+din[0] => enARdFF_2:reg:0:biti.i_d
+din[1] => enARdFF_2:reg:1:biti.i_d
+din[2] => enARdFF_2:reg:2:biti.i_d
+load => enARdFF_2:reg:2:biti.i_enable
+load => enARdFF_2:reg:1:biti.i_enable
+load => enARdFF_2:reg:0:biti.i_enable
+clk => enARdFF_2:reg:2:biti.i_clock
+clk => enARdFF_2:reg:1:biti.i_clock
+clk => enARdFF_2:reg:0:biti.i_clock
+dout[0] <= enARdFF_2:reg:0:biti.o_q
+dout[1] <= enARdFF_2:reg:1:biti.o_q
+dout[2] <= enARdFF_2:reg:2:biti.o_q
+dout_b[0] <= enARdFF_2:reg:0:biti.o_qBar
+dout_b[1] <= enARdFF_2:reg:1:biti.o_qBar
+dout_b[2] <= enARdFF_2:reg:2:biti.o_qBar
+
+
+|top_level|UART:uart_block|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:2:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:1:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|UART:uart_block|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:0:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|nbit8to1mux:mux
+i_0[0] => o.DATAB
+i_0[1] => o.DATAB
+i_0[2] => o.DATAB
+i_0[3] => o.DATAB
+i_0[4] => o.DATAB
+i_0[5] => o.DATAB
+i_0[6] => o.DATAB
+i_0[7] => o.DATAB
+i_1[0] => o.DATAB
+i_1[1] => o.DATAB
+i_1[2] => o.DATAB
+i_1[3] => o.DATAB
+i_1[4] => o.DATAB
+i_1[5] => o.DATAB
+i_1[6] => o.DATAB
+i_1[7] => o.DATAB
+i_2[0] => o.DATAB
+i_2[1] => o.DATAB
+i_2[2] => o.DATAB
+i_2[3] => o.DATAB
+i_2[4] => o.DATAB
+i_2[5] => o.DATAB
+i_2[6] => o.DATAB
+i_2[7] => o.DATAB
+i_3[0] => o.DATAB
+i_3[1] => o.DATAB
+i_3[2] => o.DATAB
+i_3[3] => o.DATAB
+i_3[4] => o.DATAB
+i_3[5] => o.DATAB
+i_3[6] => o.DATAB
+i_3[7] => o.DATAB
+i_4[0] => o.DATAB
+i_4[1] => o.DATAB
+i_4[2] => o.DATAB
+i_4[3] => o.DATAB
+i_4[4] => o.DATAB
+i_4[5] => o.DATAB
+i_4[6] => o.DATAB
+i_4[7] => o.DATAB
+i_5[0] => o.DATAB
+i_5[1] => o.DATAB
+i_5[2] => o.DATAB
+i_5[3] => o.DATAB
+i_5[4] => o.DATAB
+i_5[5] => o.DATAB
+i_5[6] => o.DATAB
+i_5[7] => o.DATAB
+i_6[0] => o.DATAB
+i_6[1] => o.DATAB
+i_6[2] => o.DATAB
+i_6[3] => o.DATAB
+i_6[4] => o.DATAB
+i_6[5] => o.DATAB
+i_6[6] => o.DATAB
+i_6[7] => o.DATAB
+i_7[0] => o.DATAA
+i_7[1] => o.DATAA
+i_7[2] => o.DATAA
+i_7[3] => o.DATAA
+i_7[4] => o.DATAA
+i_7[5] => o.DATAA
+i_7[6] => o.DATAA
+i_7[7] => o.DATAA
+mux_sel[0] => Equal0.IN0
+mux_sel[0] => Equal1.IN2
+mux_sel[0] => Equal2.IN1
+mux_sel[0] => Equal3.IN2
+mux_sel[0] => Equal4.IN1
+mux_sel[0] => Equal5.IN2
+mux_sel[0] => Equal6.IN2
+mux_sel[1] => Equal0.IN2
+mux_sel[1] => Equal1.IN0
+mux_sel[1] => Equal2.IN0
+mux_sel[1] => Equal3.IN1
+mux_sel[1] => Equal4.IN2
+mux_sel[1] => Equal5.IN1
+mux_sel[1] => Equal6.IN1
+mux_sel[2] => Equal0.IN1
+mux_sel[2] => Equal1.IN1
+mux_sel[2] => Equal2.IN2
+mux_sel[2] => Equal3.IN0
+mux_sel[2] => Equal4.IN0
+mux_sel[2] => Equal5.IN0
+mux_sel[2] => Equal6.IN0
+o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[2] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[3] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[4] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[5] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[6] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[7] <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3
+GClock => timer:traffic_timer.clk
+GClock => fourbitcounter:msc_counter.clk
+GClock => fourbitcounter:ssc_counter.clk
+GClock => fsmController:controller.clk
+GClock => debouncer:sscs_debounce.i_clock
+GReset => fsmController:controller.resetBar
+SSCS => debouncer:sscs_debounce.i_raw
+MSC[0] => nbit2to1mux:max_mux.i_0[0]
+MSC[1] => nbit2to1mux:max_mux.i_0[1]
+MSC[2] => nbit2to1mux:max_mux.i_0[2]
+MSC[3] => nbit2to1mux:max_mux.i_0[3]
+SSC[0] => nbit2to1mux:max_mux.i_1[0]
+SSC[1] => nbit2to1mux:max_mux.i_1[1]
+SSC[2] => nbit2to1mux:max_mux.i_1[2]
+SSC[3] => nbit2to1mux:max_mux.i_1[3]
+MSTL[0] <= fsmController:controller.MSTL[0]
+MSTL[1] <= fsmController:controller.MSTL[1]
+MSTL[2] <= fsmController:controller.MSTL[2]
+SSTL[0] <= fsmController:controller.SSTL[0]
+SSTL[1] <= fsmController:controller.SSTL[1]
+SSTL[2] <= fsmController:controller.SSTL[2]
+MS_colour[0] <= fsmController:controller.MS_colour[0]
+MS_colour[1] <= fsmController:controller.MS_colour[1]
+MS_colour[2] <= fsmController:controller.MS_colour[2]
+MS_colour[3] <= fsmController:controller.MS_colour[3]
+MS_colour[4] <= fsmController:controller.MS_colour[4]
+MS_colour[5] <= fsmController:controller.MS_colour[5]
+MS_colour[6] <= fsmController:controller.MS_colour[6]
+MS_colour[7] <= fsmController:controller.MS_colour[7]
+SS_colour[0] <= fsmController:controller.SS_colour[0]
+SS_colour[1] <= fsmController:controller.SS_colour[1]
+SS_colour[2] <= fsmController:controller.SS_colour[2]
+SS_colour[3] <= fsmController:controller.SS_colour[3]
+SS_colour[4] <= fsmController:controller.SS_colour[4]
+SS_colour[5] <= fsmController:controller.SS_colour[5]
+SS_colour[6] <= fsmController:controller.SS_colour[6]
+SS_colour[7] <= fsmController:controller.SS_colour[7]
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer
+clk => fourbitcounter:counterMST.clk
+clk => fourbitcounter:counterSST.clk
+setTimer => fourbitcounter:counterMST.reset
+setTimer => fourbitcounter:counterSST.reset
+MST[0] <= fourbitcounter:counterMST.count[0]
+MST[1] <= fourbitcounter:counterMST.count[1]
+MST[2] <= fourbitcounter:counterMST.count[2]
+MST[3] <= fourbitcounter:counterMST.count[3]
+SST[0] <= fourbitcounter:counterSST.count[0]
+SST[1] <= fourbitcounter:counterSST.count[1]
+SST[2] <= fourbitcounter:counterSST.count[2]
+SST[3] <= fourbitcounter:counterSST.count[3]
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST
+clk => nbitreg:reg.clk
+reset => nbitreg:reg.reset_b
+increment => nbitreg:reg.load
+count[0] <= nbitreg:reg.dout[0]
+count[1] <= nbitreg:reg.dout[1]
+count[2] <= nbitreg:reg.dout[2]
+count[3] <= nbitreg:reg.dout[3]
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitaddersubtractor:adder
+x[0] => fulladder:FA0.x
+x[1] => fulladder:addersubtractor:1:FAi.x
+x[2] => fulladder:addersubtractor:2:FAi.x
+x[3] => fulladder:addersubtractor:3:FAi.x
+y[0] => yxor[0].IN0
+y[1] => yxor[1].IN0
+y[2] => yxor[2].IN0
+y[3] => yxor[3].IN0
+cin => fulladder:FA0.cin
+cin => yxor[3].IN1
+cin => yxor[2].IN1
+cin => yxor[1].IN1
+cin => yxor[0].IN1
+sum[0] <= fulladder:FA0.sum
+sum[1] <= fulladder:addersubtractor:1:FAi.sum
+sum[2] <= fulladder:addersubtractor:2:FAi.sum
+sum[3] <= fulladder:addersubtractor:3:FAi.sum
+cout <= fulladder:addersubtractor:3:FAi.cout
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitaddersubtractor:adder|fulladder:FA0
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitaddersubtractor:adder|fulladder:\addersubtractor:1:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitaddersubtractor:adder|fulladder:\addersubtractor:2:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitaddersubtractor:adder|fulladder:\addersubtractor:3:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitreg:reg
+reset_b => enARdFF_2:reg:3:biti.i_resetBar
+reset_b => enARdFF_2:reg:2:biti.i_resetBar
+reset_b => enARdFF_2:reg:1:biti.i_resetBar
+reset_b => enARdFF_2:reg:0:biti.i_resetBar
+din[0] => enARdFF_2:reg:0:biti.i_d
+din[1] => enARdFF_2:reg:1:biti.i_d
+din[2] => enARdFF_2:reg:2:biti.i_d
+din[3] => enARdFF_2:reg:3:biti.i_d
+load => enARdFF_2:reg:3:biti.i_enable
+load => enARdFF_2:reg:2:biti.i_enable
+load => enARdFF_2:reg:1:biti.i_enable
+load => enARdFF_2:reg:0:biti.i_enable
+clk => enARdFF_2:reg:3:biti.i_clock
+clk => enARdFF_2:reg:2:biti.i_clock
+clk => enARdFF_2:reg:1:biti.i_clock
+clk => enARdFF_2:reg:0:biti.i_clock
+dout[0] <= enARdFF_2:reg:0:biti.o_q
+dout[1] <= enARdFF_2:reg:1:biti.o_q
+dout[2] <= enARdFF_2:reg:2:biti.o_q
+dout[3] <= enARdFF_2:reg:3:biti.o_q
+dout_b[0] <= enARdFF_2:reg:0:biti.o_qBar
+dout_b[1] <= enARdFF_2:reg:1:biti.o_qBar
+dout_b[2] <= enARdFF_2:reg:2:biti.o_qBar
+dout_b[3] <= enARdFF_2:reg:3:biti.o_qBar
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitreg:reg|enARdFF_2:\reg:3:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitreg:reg|enARdFF_2:\reg:2:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitreg:reg|enARdFF_2:\reg:1:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterMST|nbitreg:reg|enARdFF_2:\reg:0:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST
+clk => nbitreg:reg.clk
+reset => nbitreg:reg.reset_b
+increment => nbitreg:reg.load
+count[0] <= nbitreg:reg.dout[0]
+count[1] <= nbitreg:reg.dout[1]
+count[2] <= nbitreg:reg.dout[2]
+count[3] <= nbitreg:reg.dout[3]
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitaddersubtractor:adder
+x[0] => fulladder:FA0.x
+x[1] => fulladder:addersubtractor:1:FAi.x
+x[2] => fulladder:addersubtractor:2:FAi.x
+x[3] => fulladder:addersubtractor:3:FAi.x
+y[0] => yxor[0].IN0
+y[1] => yxor[1].IN0
+y[2] => yxor[2].IN0
+y[3] => yxor[3].IN0
+cin => fulladder:FA0.cin
+cin => yxor[3].IN1
+cin => yxor[2].IN1
+cin => yxor[1].IN1
+cin => yxor[0].IN1
+sum[0] <= fulladder:FA0.sum
+sum[1] <= fulladder:addersubtractor:1:FAi.sum
+sum[2] <= fulladder:addersubtractor:2:FAi.sum
+sum[3] <= fulladder:addersubtractor:3:FAi.sum
+cout <= fulladder:addersubtractor:3:FAi.cout
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitaddersubtractor:adder|fulladder:FA0
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitaddersubtractor:adder|fulladder:\addersubtractor:1:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitaddersubtractor:adder|fulladder:\addersubtractor:2:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitaddersubtractor:adder|fulladder:\addersubtractor:3:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitreg:reg
+reset_b => enARdFF_2:reg:3:biti.i_resetBar
+reset_b => enARdFF_2:reg:2:biti.i_resetBar
+reset_b => enARdFF_2:reg:1:biti.i_resetBar
+reset_b => enARdFF_2:reg:0:biti.i_resetBar
+din[0] => enARdFF_2:reg:0:biti.i_d
+din[1] => enARdFF_2:reg:1:biti.i_d
+din[2] => enARdFF_2:reg:2:biti.i_d
+din[3] => enARdFF_2:reg:3:biti.i_d
+load => enARdFF_2:reg:3:biti.i_enable
+load => enARdFF_2:reg:2:biti.i_enable
+load => enARdFF_2:reg:1:biti.i_enable
+load => enARdFF_2:reg:0:biti.i_enable
+clk => enARdFF_2:reg:3:biti.i_clock
+clk => enARdFF_2:reg:2:biti.i_clock
+clk => enARdFF_2:reg:1:biti.i_clock
+clk => enARdFF_2:reg:0:biti.i_clock
+dout[0] <= enARdFF_2:reg:0:biti.o_q
+dout[1] <= enARdFF_2:reg:1:biti.o_q
+dout[2] <= enARdFF_2:reg:2:biti.o_q
+dout[3] <= enARdFF_2:reg:3:biti.o_q
+dout_b[0] <= enARdFF_2:reg:0:biti.o_qBar
+dout_b[1] <= enARdFF_2:reg:1:biti.o_qBar
+dout_b[2] <= enARdFF_2:reg:2:biti.o_qBar
+dout_b[3] <= enARdFF_2:reg:3:biti.o_qBar
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitreg:reg|enARdFF_2:\reg:3:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitreg:reg|enARdFF_2:\reg:2:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitreg:reg|enARdFF_2:\reg:1:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|timer:traffic_timer|fourbitcounter:counterSST|nbitreg:reg|enARdFF_2:\reg:0:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter
+clk => nbitreg:reg.clk
+reset => nbitreg:reg.reset_b
+increment => nbitreg:reg.load
+count[0] <= nbitreg:reg.dout[0]
+count[1] <= nbitreg:reg.dout[1]
+count[2] <= nbitreg:reg.dout[2]
+count[3] <= nbitreg:reg.dout[3]
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitaddersubtractor:adder
+x[0] => fulladder:FA0.x
+x[1] => fulladder:addersubtractor:1:FAi.x
+x[2] => fulladder:addersubtractor:2:FAi.x
+x[3] => fulladder:addersubtractor:3:FAi.x
+y[0] => yxor[0].IN0
+y[1] => yxor[1].IN0
+y[2] => yxor[2].IN0
+y[3] => yxor[3].IN0
+cin => fulladder:FA0.cin
+cin => yxor[3].IN1
+cin => yxor[2].IN1
+cin => yxor[1].IN1
+cin => yxor[0].IN1
+sum[0] <= fulladder:FA0.sum
+sum[1] <= fulladder:addersubtractor:1:FAi.sum
+sum[2] <= fulladder:addersubtractor:2:FAi.sum
+sum[3] <= fulladder:addersubtractor:3:FAi.sum
+cout <= fulladder:addersubtractor:3:FAi.cout
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitaddersubtractor:adder|fulladder:FA0
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitaddersubtractor:adder|fulladder:\addersubtractor:1:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitaddersubtractor:adder|fulladder:\addersubtractor:2:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitaddersubtractor:adder|fulladder:\addersubtractor:3:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitreg:reg
+reset_b => enARdFF_2:reg:3:biti.i_resetBar
+reset_b => enARdFF_2:reg:2:biti.i_resetBar
+reset_b => enARdFF_2:reg:1:biti.i_resetBar
+reset_b => enARdFF_2:reg:0:biti.i_resetBar
+din[0] => enARdFF_2:reg:0:biti.i_d
+din[1] => enARdFF_2:reg:1:biti.i_d
+din[2] => enARdFF_2:reg:2:biti.i_d
+din[3] => enARdFF_2:reg:3:biti.i_d
+load => enARdFF_2:reg:3:biti.i_enable
+load => enARdFF_2:reg:2:biti.i_enable
+load => enARdFF_2:reg:1:biti.i_enable
+load => enARdFF_2:reg:0:biti.i_enable
+clk => enARdFF_2:reg:3:biti.i_clock
+clk => enARdFF_2:reg:2:biti.i_clock
+clk => enARdFF_2:reg:1:biti.i_clock
+clk => enARdFF_2:reg:0:biti.i_clock
+dout[0] <= enARdFF_2:reg:0:biti.o_q
+dout[1] <= enARdFF_2:reg:1:biti.o_q
+dout[2] <= enARdFF_2:reg:2:biti.o_q
+dout[3] <= enARdFF_2:reg:3:biti.o_q
+dout_b[0] <= enARdFF_2:reg:0:biti.o_qBar
+dout_b[1] <= enARdFF_2:reg:1:biti.o_qBar
+dout_b[2] <= enARdFF_2:reg:2:biti.o_qBar
+dout_b[3] <= enARdFF_2:reg:3:biti.o_qBar
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitreg:reg|enARdFF_2:\reg:3:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitreg:reg|enARdFF_2:\reg:2:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitreg:reg|enARdFF_2:\reg:1:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:msc_counter|nbitreg:reg|enARdFF_2:\reg:0:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter
+clk => nbitreg:reg.clk
+reset => nbitreg:reg.reset_b
+increment => nbitreg:reg.load
+count[0] <= nbitreg:reg.dout[0]
+count[1] <= nbitreg:reg.dout[1]
+count[2] <= nbitreg:reg.dout[2]
+count[3] <= nbitreg:reg.dout[3]
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitaddersubtractor:adder
+x[0] => fulladder:FA0.x
+x[1] => fulladder:addersubtractor:1:FAi.x
+x[2] => fulladder:addersubtractor:2:FAi.x
+x[3] => fulladder:addersubtractor:3:FAi.x
+y[0] => yxor[0].IN0
+y[1] => yxor[1].IN0
+y[2] => yxor[2].IN0
+y[3] => yxor[3].IN0
+cin => fulladder:FA0.cin
+cin => yxor[3].IN1
+cin => yxor[2].IN1
+cin => yxor[1].IN1
+cin => yxor[0].IN1
+sum[0] <= fulladder:FA0.sum
+sum[1] <= fulladder:addersubtractor:1:FAi.sum
+sum[2] <= fulladder:addersubtractor:2:FAi.sum
+sum[3] <= fulladder:addersubtractor:3:FAi.sum
+cout <= fulladder:addersubtractor:3:FAi.cout
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitaddersubtractor:adder|fulladder:FA0
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitaddersubtractor:adder|fulladder:\addersubtractor:1:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitaddersubtractor:adder|fulladder:\addersubtractor:2:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitaddersubtractor:adder|fulladder:\addersubtractor:3:FAi
+x => sum.IN0
+x => cout.IN0
+y => sum.IN1
+y => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitreg:reg
+reset_b => enARdFF_2:reg:3:biti.i_resetBar
+reset_b => enARdFF_2:reg:2:biti.i_resetBar
+reset_b => enARdFF_2:reg:1:biti.i_resetBar
+reset_b => enARdFF_2:reg:0:biti.i_resetBar
+din[0] => enARdFF_2:reg:0:biti.i_d
+din[1] => enARdFF_2:reg:1:biti.i_d
+din[2] => enARdFF_2:reg:2:biti.i_d
+din[3] => enARdFF_2:reg:3:biti.i_d
+load => enARdFF_2:reg:3:biti.i_enable
+load => enARdFF_2:reg:2:biti.i_enable
+load => enARdFF_2:reg:1:biti.i_enable
+load => enARdFF_2:reg:0:biti.i_enable
+clk => enARdFF_2:reg:3:biti.i_clock
+clk => enARdFF_2:reg:2:biti.i_clock
+clk => enARdFF_2:reg:1:biti.i_clock
+clk => enARdFF_2:reg:0:biti.i_clock
+dout[0] <= enARdFF_2:reg:0:biti.o_q
+dout[1] <= enARdFF_2:reg:1:biti.o_q
+dout[2] <= enARdFF_2:reg:2:biti.o_q
+dout[3] <= enARdFF_2:reg:3:biti.o_q
+dout_b[0] <= enARdFF_2:reg:0:biti.o_qBar
+dout_b[1] <= enARdFF_2:reg:1:biti.o_qBar
+dout_b[2] <= enARdFF_2:reg:2:biti.o_qBar
+dout_b[3] <= enARdFF_2:reg:3:biti.o_qBar
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitreg:reg|enARdFF_2:\reg:3:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitreg:reg|enARdFF_2:\reg:2:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitreg:reg|enARdFF_2:\reg:1:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcounter:ssc_counter|nbitreg:reg|enARdFF_2:\reg:0:biti
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|nbit2to1mux:counter_mux
+i_0[0] => o.DATAB
+i_0[1] => o.DATAB
+i_0[2] => o.DATAB
+i_0[3] => o.DATAB
+i_1[0] => o.DATAA
+i_1[1] => o.DATAA
+i_1[2] => o.DATAA
+i_1[3] => o.DATAA
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[2] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[3] <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|nbit2to1mux:max_mux
+i_0[0] => o.DATAB
+i_0[1] => o.DATAB
+i_0[2] => o.DATAB
+i_0[3] => o.DATAB
+i_1[0] => o.DATAA
+i_1[1] => o.DATAA
+i_1[2] => o.DATAA
+i_1[3] => o.DATAA
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[2] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[3] <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|nbit2to1mux:timer_mux
+i_0[0] => o.DATAB
+i_0[1] => o.DATAB
+i_0[2] => o.DATAB
+i_0[3] => o.DATAB
+i_1[0] => o.DATAA
+i_1[1] => o.DATAA
+i_1[2] => o.DATAA
+i_1[3] => o.DATAA
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+sel1 => o.OUTPUTSELECT
+o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[2] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[3] <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fourbitcomparator:compare
+A[0] => gt_bit.IN1
+A[0] => lt_bit.IN1
+A[1] => gt_bit.IN1
+A[1] => Equal1.IN2
+A[1] => lt_bit.IN1
+A[2] => gt_bit.IN1
+A[2] => Equal0.IN1
+A[2] => Equal1.IN1
+A[2] => lt_bit.IN1
+A[3] => gt_bit[3].IN0
+A[3] => gt_bit.IN0
+A[3] => Equal0.IN0
+A[3] => Equal1.IN0
+A[3] => lt_bit[3].IN0
+B[0] => lt_bit[0].IN1
+B[0] => gt_bit[0].IN1
+B[1] => Equal1.IN5
+B[1] => lt_bit[1].IN1
+B[1] => gt_bit[1].IN1
+B[2] => Equal0.IN3
+B[2] => Equal1.IN4
+B[2] => lt_bit[2].IN1
+B[2] => gt_bit[2].IN1
+B[3] => gt_bit.IN1
+B[3] => Equal0.IN2
+B[3] => Equal1.IN3
+B[3] => lt_bit[3].IN1
+B[3] => gt_bit[3].IN1
+A_gt_B <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+A_lt_B <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+A_eq_B <= A_eq_B.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fsmController:controller
+MSC => w.IN0
+SSC => w.IN1
+MST => w.IN1
+SST => w.IN1
+SSCS => w.IN1
+clk => enARdFF_2:dFFy1.i_clock
+clk => enARdFF_2:dFFy0.i_clock
+clk => enARdFF_2:reset_timer.i_clock
+clk => enARdFF_2:reset_counter.i_clock
+resetBar => enARdFF_2:dFFy1.i_resetBar
+resetBar => enARdFF_2:dFFy0.i_resetBar
+resetBar => enARdFF_2:reset_timer.i_resetBar
+resetBar => enARdFF_2:reset_counter.i_resetBar
+MSTL[0] <= enARdFF_2:dFFy1.o_q
+MSTL[1] <= MSTL.DB_MAX_OUTPUT_PORT_TYPE
+MSTL[2] <= MSTL.DB_MAX_OUTPUT_PORT_TYPE
+SSTL[0] <= enARdFF_2:dFFy1.o_qBar
+SSTL[1] <= SSTL.DB_MAX_OUTPUT_PORT_TYPE
+SSTL[2] <= SSTL.DB_MAX_OUTPUT_PORT_TYPE
+setCounter <= enARdFF_2:reset_counter.o_q
+setTimer <= enARdFF_2:reset_timer.o_q
+sel1 <= <VCC>
+sel2 <= <VCC>
+MS_colour[0] <= MS_colour[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+MS_colour[1] <= MS_colour[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+MS_colour[2] <= MS_colour[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+MS_colour[3] <= MS_colour[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+MS_colour[4] <= MS_colour[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+MS_colour[5] <= <VCC>
+MS_colour[6] <= <VCC>
+MS_colour[7] <= <GND>
+SS_colour[0] <= SS_colour[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+SS_colour[1] <= SS_colour[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+SS_colour[2] <= SS_colour[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+SS_colour[3] <= SS_colour[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+SS_colour[4] <= SS_colour[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+SS_colour[5] <= <VCC>
+SS_colour[6] <= <VCC>
+SS_colour[7] <= <GND>
+
+
+|top_level|trafficlightcontroller:lab3|fsmController:controller|enARdFF_2:dFFy1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fsmController:controller|enARdFF_2:dFFy0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fsmController:controller|enARdFF_2:reset_timer
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|fsmController:controller|enARdFF_2:reset_counter
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level|trafficlightcontroller:lab3|debouncer:sscs_debounce
+i_raw => int_nextState[1].OUTPUTSELECT
+i_raw => int_nextState[0].OUTPUTSELECT
+i_clock => int_currentState[0].CLK
+i_clock => int_currentState[1].CLK
+o_clean <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
 
 

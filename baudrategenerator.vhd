@@ -18,9 +18,8 @@ component DividebyN
 	port(i_clk : in std_logic; o_clk: out std_logic);
 end component;
 
-component nbit8to1mux
-	generic(n : integer := 8);
-	port(i: in std_logic_vector(n-1 downto 0);
+component onebit8to1mux
+	port(i_0, i_1, i_2, i_3, i_4, i_5, i_6, i_7: in std_logic;
 		 mux_sel: in std_logic_vector(2 downto 0); 
 		 o : out std_logic);
 end component;
@@ -42,9 +41,11 @@ begin
 			port map(i_clk => int_divby256(k-1), o_clk => int_divby256(k)); 
 	end generate;
 
-	mux: nbit8to1mux
-		generic map(n => 8)
-		port map(i => int_divby256, mux_sel => sel, o => mux_out);
+	mux: onebit8to1mux
+		port map(i_0 => int_divby256(0), i_1 => int_divby256(1), i_2 => int_divby256(2),
+					i_3 => int_divby256(3), i_4 => int_divby256(4), i_5 => int_divby256(5), 
+					i_6 => int_divby256(6), i_7 => int_divby256(7), 
+					mux_sel => sel, o => mux_out);
 
 	--DIVIDE BY 8--
 	divby8: DividebyN

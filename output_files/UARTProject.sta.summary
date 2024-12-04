@@ -2,64 +2,448 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'BClk'
-Slack : -0.918
-TNS   : -14.913
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -8.957
+TNS   : -34.948
 
-Type  : Slow 1200mV 85C Model Hold 'BClk'
-Slack : 0.402
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -8.218
+TNS   : -32.155
+
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -6.421
+TNS   : -24.969
+
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -5.745
+TNS   : -22.100
+
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -5.042
+TNS   : -19.288
+
+Type  : Slow 1200mV 85C Model Setup 'BaudRateSel[0]'
+Slack : -4.995
+TNS   : -18.861
+
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -4.668
+TNS   : -17.792
+
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -3.886
+TNS   : -14.425
+
+Type  : Slow 1200mV 85C Model Setup 'GClock'
+Slack : -1.762
+TNS   : -14.657
+
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -1.382
+TNS   : -17.989
+
+Type  : Slow 1200mV 85C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -0.243
+TNS   : -0.243
+
+Type  : Slow 1200mV 85C Model Hold 'BaudRateSel[0]'
+Slack : -8.535
+TNS   : -29.719
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -6.062
+TNS   : -21.393
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -5.211
+TNS   : -18.412
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -4.847
+TNS   : -16.849
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -4.111
+TNS   : -14.131
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -3.385
+TNS   : -11.071
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -1.537
+TNS   : -3.781
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -0.794
+TNS   : -1.487
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -0.289
+TNS   : -0.289
+
+Type  : Slow 1200mV 85C Model Hold 'GClock'
+Slack : -0.238
+TNS   : -0.238
+
+Type  : Slow 1200mV 85C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : 0.404
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'BClk'
-Slack : -0.980
-TNS   : -2.940
+Type  : Slow 1200mV 85C Model Recovery 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -1.126
+TNS   : -6.198
 
-Type  : Slow 1200mV 85C Model Removal 'BClk'
-Slack : 1.353
+Type  : Slow 1200mV 85C Model Recovery 'GClock'
+Slack : -0.417
+TNS   : -1.668
+
+Type  : Slow 1200mV 85C Model Removal 'GClock'
+Slack : 0.947
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BClk'
+Type  : Slow 1200mV 85C Model Removal 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : 1.365
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BaudRateSel[0]'
+Slack : -4.296
+TNS   : -151.426
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GClock'
 Slack : -3.000
-TNS   : -29.985
+TNS   : -23.560
 
-Type  : Slow 1200mV 0C Model Setup 'BClk'
-Slack : -0.715
-TNS   : -11.464
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -1.285
+TNS   : -32.125
 
-Type  : Slow 1200mV 0C Model Hold 'BClk'
-Slack : 0.354
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -1.285
+TNS   : -2.570
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -8.114
+TNS   : -31.574
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -7.445
+TNS   : -29.042
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -5.840
+TNS   : -22.622
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -5.222
+TNS   : -20.004
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -4.587
+TNS   : -17.463
+
+Type  : Slow 1200mV 0C Model Setup 'BaudRateSel[0]'
+Slack : -4.381
+TNS   : -16.510
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -4.256
+TNS   : -16.140
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -3.520
+TNS   : -13.066
+
+Type  : Slow 1200mV 0C Model Setup 'GClock'
+Slack : -1.504
+TNS   : -11.884
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -1.179
+TNS   : -14.178
+
+Type  : Slow 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -0.133
+TNS   : -0.133
+
+Type  : Slow 1200mV 0C Model Hold 'BaudRateSel[0]'
+Slack : -7.846
+TNS   : -27.062
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -5.398
+TNS   : -19.292
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -4.603
+TNS   : -16.423
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -4.276
+TNS   : -15.020
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -3.621
+TNS   : -12.608
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -2.953
+TNS   : -9.781
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -1.299
+TNS   : -3.279
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -0.652
+TNS   : -1.197
+
+Type  : Slow 1200mV 0C Model Hold 'GClock'
+Slack : -0.199
+TNS   : -0.199
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -0.183
+TNS   : -0.183
+
+Type  : Slow 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : 0.355
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'BClk'
-Slack : -0.788
-TNS   : -2.364
+Type  : Slow 1200mV 0C Model Recovery 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -0.914
+TNS   : -5.010
 
-Type  : Slow 1200mV 0C Model Removal 'BClk'
-Slack : 1.227
+Type  : Slow 1200mV 0C Model Recovery 'GClock'
+Slack : -0.281
+TNS   : -1.124
+
+Type  : Slow 1200mV 0C Model Removal 'GClock'
+Slack : 0.852
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BClk'
+Type  : Slow 1200mV 0C Model Removal 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : 1.241
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BaudRateSel[0]'
+Slack : -3.957
+TNS   : -135.962
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GClock'
 Slack : -3.000
-TNS   : -29.985
+TNS   : -23.560
 
-Type  : Fast 1200mV 0C Model Setup 'BClk'
-Slack : 0.052
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -1.285
+TNS   : -32.125
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -1.285
+TNS   : -2.570
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -4.542
+TNS   : -17.689
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -4.183
+TNS   : -16.253
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -3.183
+TNS   : -12.253
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -2.874
+TNS   : -11.017
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -2.529
+TNS   : -9.637
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -2.348
+TNS   : -8.913
+
+Type  : Fast 1200mV 0C Model Setup 'BaudRateSel[0]'
+Slack : -2.151
+TNS   : -8.125
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -1.999
+TNS   : -7.517
+
+Type  : Fast 1200mV 0C Model Setup 'GClock'
+Slack : -0.376
+TNS   : -1.440
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -0.156
+TNS   : -0.362
+
+Type  : Fast 1200mV 0C Model Setup 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : 0.296
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'BClk'
-Slack : 0.181
+Type  : Fast 1200mV 0C Model Hold 'BaudRateSel[0]'
+Slack : -4.499
+TNS   : -15.469
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -3.192
+TNS   : -10.979
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -2.809
+TNS   : -9.810
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -2.635
+TNS   : -8.993
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -2.270
+TNS   : -7.672
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -1.939
+TNS   : -6.319
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -0.912
+TNS   : -2.242
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -0.540
+TNS   : -1.037
+
+Type  : Fast 1200mV 0C Model Hold 'GClock'
+Slack : -0.318
+TNS   : -0.318
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -0.277
+TNS   : -0.277
+
+Type  : Fast 1200mV 0C Model Hold 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : 0.182
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'BClk'
-Slack : 0.035
+Type  : Fast 1200mV 0C Model Recovery 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -0.049
+TNS   : -0.147
+
+Type  : Fast 1200mV 0C Model Recovery 'GClock'
+Slack : 0.298
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'BClk'
-Slack : 0.654
+Type  : Fast 1200mV 0C Model Removal 'GClock'
+Slack : 0.462
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BClk'
+Type  : Fast 1200mV 0C Model Removal 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : 0.651
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BaudRateSel[0]'
 Slack : -3.000
-TNS   : -25.422
+TNS   : -65.837
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -19.977
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby8|int_clk'
+Slack : -1.000
+TNS   : -25.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:1:divby256_k|int_clk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:2:divby256_k|int_clk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:3:divby256_k|int_clk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:4:divby256_k|int_clk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:5:divby256_k|int_clk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:\ripple_divby2:6:divby256_k|int_clk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby256_0|int_clk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:uart_block|baudrategenerator:baudrate|DividebyN:divby41|int_clk'
+Slack : -1.000
+TNS   : -2.000
 
 ------------------------------------------------------------
