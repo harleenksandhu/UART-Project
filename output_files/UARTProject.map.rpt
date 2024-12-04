@@ -1,0 +1,786 @@
+Analysis & Synthesis report for UARTProject
+Tue Dec 03 21:44:17 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: nbitreg:TDR
+ 10. Parameter Settings for User Entity Instance: nbitshiftreg:TSR
+ 11. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:mux0
+ 12. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:muxn_1
+ 13. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:6:muxi
+ 14. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:5:muxi
+ 15. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:4:muxi
+ 16. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:3:muxi
+ 17. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:2:muxi
+ 18. Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:1:muxi
+ 19. Parameter Settings for User Entity Instance: nbit2to1mux:boundmux
+ 20. Parameter Settings for User Entity Instance: nbit2to1mux:output_mux
+ 21. Parameter Settings for User Entity Instance: threebitcounter:counter|nbitreg:reg
+ 22. Parameter Settings for User Entity Instance: nbitcomparator:comparator
+ 23. Port Connectivity Checks: "transmitter_control:controller|enARdFF_2:DFF_0"
+ 24. Port Connectivity Checks: "transmitter_control:controller|enARdFF_2:DFF_1"
+ 25. Port Connectivity Checks: "nbitcomparator:comparator|oneBitComparator:comparatorMSB"
+ 26. Port Connectivity Checks: "nbitcomparator:comparator"
+ 27. Port Connectivity Checks: "threebitcounter:counter|nbitreg:reg"
+ 28. Port Connectivity Checks: "threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add0"
+ 29. Port Connectivity Checks: "threebitcounter:counter|threeBitAdder:adder"
+ 30. Port Connectivity Checks: "nbit2to1mux:boundmux"
+ 31. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:0:biti"
+ 32. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:1:biti"
+ 33. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:2:biti"
+ 34. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:3:biti"
+ 35. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:4:biti"
+ 36. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:5:biti"
+ 37. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:6:biti"
+ 38. Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:7:biti"
+ 39. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:1:muxi"
+ 40. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:2:muxi"
+ 41. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:3:muxi"
+ 42. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:4:muxi"
+ 43. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:5:muxi"
+ 44. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:6:muxi"
+ 45. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:muxn_1"
+ 46. Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:mux0"
+ 47. Port Connectivity Checks: "nbitshiftreg:TSR"
+ 48. Port Connectivity Checks: "nbitreg:TDR"
+ 49. Elapsed Time Per Partition
+ 50. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Dec 03 21:44:17 2024      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; UARTProject                                ;
+; Top-level Entity Name              ; transmitter                                ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 26                                         ;
+;     Total combinational functions  ; 18                                         ;
+;     Dedicated logic registers      ; 21                                         ;
+; Total registers                    ; 21                                         ;
+; Total pins                         ; 13                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; transmitter        ; UARTProject        ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-20        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                   ;
++----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path            ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
+; transmitter_control.vhd          ; yes             ; User VHDL File  ; C:/UART-Project/transmitter_control.vhd ;         ;
+; transmitter.vhd                  ; yes             ; User VHDL File  ; C:/UART-Project/transmitter.vhd         ;         ;
+; threebitcounter.vhd              ; yes             ; User VHDL File  ; C:/UART-Project/threebitcounter.vhd     ;         ;
+; threebitadder.vhd                ; yes             ; User VHDL File  ; C:/UART-Project/threebitadder.vhd       ;         ;
+; onebitcomparator.vhd             ; yes             ; User VHDL File  ; C:/UART-Project/onebitcomparator.vhd    ;         ;
+; onebitadder.vhd                  ; yes             ; User VHDL File  ; C:/UART-Project/onebitadder.vhd         ;         ;
+; onebit4to1mux.vhd                ; yes             ; User VHDL File  ; C:/UART-Project/onebit4to1mux.vhd       ;         ;
+; nbitshiftreg.vhd                 ; yes             ; User VHDL File  ; C:/UART-Project/nbitshiftreg.vhd        ;         ;
+; nbitreg.vhd                      ; yes             ; User VHDL File  ; C:/UART-Project/nbitreg.vhd             ;         ;
+; nbitcomparator.vhd               ; yes             ; User VHDL File  ; C:/UART-Project/nbitcomparator.vhd      ;         ;
+; nbit2to1mux.vhd                  ; yes             ; User VHDL File  ; C:/UART-Project/nbit2to1mux.vhd         ;         ;
+; enardFF_2.vhd                    ; yes             ; User VHDL File  ; C:/UART-Project/enardFF_2.vhd           ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                        ;
++---------------------------------------------+------------------------------------------------------+
+; Resource                                    ; Usage                                                ;
++---------------------------------------------+------------------------------------------------------+
+; Estimated Total logic elements              ; 26                                                   ;
+;                                             ;                                                      ;
+; Total combinational functions               ; 18                                                   ;
+; Logic element usage by number of LUT inputs ;                                                      ;
+;     -- 4 input functions                    ; 10                                                   ;
+;     -- 3 input functions                    ; 5                                                    ;
+;     -- <=2 input functions                  ; 3                                                    ;
+;                                             ;                                                      ;
+; Logic elements by mode                      ;                                                      ;
+;     -- normal mode                          ; 18                                                   ;
+;     -- arithmetic mode                      ; 0                                                    ;
+;                                             ;                                                      ;
+; Total registers                             ; 21                                                   ;
+;     -- Dedicated logic registers            ; 21                                                   ;
+;     -- I/O registers                        ; 0                                                    ;
+;                                             ;                                                      ;
+; I/O pins                                    ; 13                                                   ;
+; Embedded Multiplier 9-bit elements          ; 0                                                    ;
+; Maximum fan-out node                        ; transmitter_control:controller|enARdFF_2:DFF_1|int_q ;
+; Maximum fan-out                             ; 24                                                   ;
+; Total fan-out                               ; 155                                                  ;
+; Average fan-out                             ; 2.38                                                 ;
++---------------------------------------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Library Name ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+; |transmitter                        ; 18 (0)            ; 21 (0)       ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |transmitter                                                           ; work         ;
+;    |nbit2to1mux:output_mux|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbit2to1mux:output_mux                                    ; work         ;
+;    |nbitreg:TDR|                    ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR                                               ; work         ;
+;       |enARdFF_2:\reg:0:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:0:biti                         ; work         ;
+;       |enARdFF_2:\reg:1:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:1:biti                         ; work         ;
+;       |enARdFF_2:\reg:2:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:2:biti                         ; work         ;
+;       |enARdFF_2:\reg:3:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:3:biti                         ; work         ;
+;       |enARdFF_2:\reg:4:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:4:biti                         ; work         ;
+;       |enARdFF_2:\reg:5:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:5:biti                         ; work         ;
+;       |enARdFF_2:\reg:6:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:6:biti                         ; work         ;
+;       |enARdFF_2:\reg:7:biti|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitreg:TDR|enARdFF_2:\reg:7:biti                         ; work         ;
+;    |nbitshiftreg:TSR|               ; 8 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR                                          ; work         ;
+;       |enARdFF_2:\dffs:0:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:0:biti                   ; work         ;
+;       |enARdFF_2:\dffs:1:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:1:biti                   ; work         ;
+;       |enARdFF_2:\dffs:2:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:2:biti                   ; work         ;
+;       |enARdFF_2:\dffs:3:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:3:biti                   ; work         ;
+;       |enARdFF_2:\dffs:4:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:4:biti                   ; work         ;
+;       |enARdFF_2:\dffs:5:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:5:biti                   ; work         ;
+;       |enARdFF_2:\dffs:6:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:6:biti                   ; work         ;
+;       |enARdFF_2:\dffs:7:biti|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|enARdFF_2:\dffs:7:biti                   ; work         ;
+;       |onebit4to1mux:\muxes:1:muxi| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:1:muxi              ; work         ;
+;       |onebit4to1mux:\muxes:2:muxi| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:2:muxi              ; work         ;
+;       |onebit4to1mux:\muxes:3:muxi| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:3:muxi              ; work         ;
+;       |onebit4to1mux:\muxes:4:muxi| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:4:muxi              ; work         ;
+;       |onebit4to1mux:\muxes:5:muxi| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:5:muxi              ; work         ;
+;       |onebit4to1mux:\muxes:6:muxi| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:\muxes:6:muxi              ; work         ;
+;       |onebit4to1mux:mux0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:mux0                       ; work         ;
+;       |onebit4to1mux:muxn_1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|nbitshiftreg:TSR|onebit4to1mux:muxn_1                     ; work         ;
+;    |threebitcounter:counter|        ; 4 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|threebitcounter:counter                                   ; work         ;
+;       |nbitreg:reg|                 ; 4 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|threebitcounter:counter|nbitreg:reg                       ; work         ;
+;          |enARdFF_2:\reg:0:biti|    ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:0:biti ; work         ;
+;          |enARdFF_2:\reg:1:biti|    ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:1:biti ; work         ;
+;          |enARdFF_2:\reg:2:biti|    ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|threebitcounter:counter|nbitreg:reg|enARdFF_2:\reg:2:biti ; work         ;
+;    |transmitter_control:controller| ; 5 (4)             ; 2 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|transmitter_control:controller                            ; work         ;
+;       |enARdFF_2:DFF_0|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|transmitter_control:controller|enARdFF_2:DFF_0            ; work         ;
+;       |enARdFF_2:DFF_1|             ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmitter|transmitter_control:controller|enARdFF_2:DFF_1            ; work         ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 21    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitreg:TDR ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; n              ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:mux0 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:muxn_1 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:6:muxi ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:5:muxi ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:4:muxi ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:3:muxi ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:2:muxi ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitshiftreg:TSR|onebit4to1mux:\muxes:1:muxi ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbit2to1mux:boundmux ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 1     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbit2to1mux:output_mux ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; n              ; 1     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: threebitcounter:counter|nbitreg:reg ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nbitcomparator:comparator ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; n              ; 3     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "transmitter_control:controller|enARdFF_2:DFF_0" ;
++----------+-------+----------+----------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                      ;
++----------+-------+----------+----------------------------------------------+
+; i_enable ; Input ; Info     ; Stuck at VCC                                 ;
++----------+-------+----------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "transmitter_control:controller|enARdFF_2:DFF_1" ;
++----------+-------+----------+----------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                      ;
++----------+-------+----------+----------------------------------------------+
+; i_enable ; Input ; Info     ; Stuck at VCC                                 ;
++----------+-------+----------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitcomparator:comparator|oneBitComparator:comparatorMSB" ;
++--------------+-------+----------+----------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                            ;
++--------------+-------+----------+----------------------------------------------------+
+; i_gtprevious ; Input ; Info     ; Stuck at GND                                       ;
+; i_ltprevious ; Input ; Info     ; Stuck at GND                                       ;
++--------------+-------+----------+----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitcomparator:comparator"                                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; agtb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; altb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "threebitcounter:counter|nbitreg:reg"                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; dout_b ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add0" ;
++-----------+-------+----------+-----------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                   ;
++-----------+-------+----------+-----------------------------------------------------------+
+; i_carryin ; Input ; Info     ; Stuck at GND                                              ;
++-----------+-------+----------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "threebitcounter:counter|threeBitAdder:adder"                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_ai[2..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_ai[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_carryout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nbit2to1mux:boundmux" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; i_0  ; Input ; Info     ; Stuck at GND           ;
+; i_1  ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:0:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:1:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:2:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:3:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:4:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:5:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:6:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|enARdFF_2:\dffs:7:biti"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:1:muxi" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:2:muxi" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:3:muxi" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:4:muxi" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:5:muxi" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:\muxes:6:muxi" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:muxn_1" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR|onebit4to1mux:mux0" ;
++------+-------+----------+---------------------------------------+
+; Port ; Type  ; Severity ; Details                               ;
++------+-------+----------+---------------------------------------+
+; i_3  ; Input ; Info     ; Stuck at GND                          ;
++------+-------+----------+---------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "nbitshiftreg:TSR" ;
++----------+-------+----------+----------------+
+; Port     ; Type  ; Severity ; Details        ;
++----------+-------+----------+----------------+
+; shift_in ; Input ; Info     ; Stuck at VCC   ;
+; shiftl   ; Input ; Info     ; Stuck at GND   ;
++----------+-------+----------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nbitreg:TDR"                                                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; dout_b ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue Dec 03 21:44:14 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UARTProject -c UARTProject
+Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file transmitter_control.vhd
+    Info (12022): Found design unit 1: transmitter_control-rtl
+    Info (12023): Found entity 1: transmitter_control
+Info (12021): Found 2 design units, including 1 entities, in source file transmitter.vhd
+    Info (12022): Found design unit 1: transmitter-rtl
+    Info (12023): Found entity 1: transmitter
+Info (12021): Found 2 design units, including 1 entities, in source file threebitcounter.vhd
+    Info (12022): Found design unit 1: threebitcounter-struc
+    Info (12023): Found entity 1: threebitcounter
+Info (12021): Found 2 design units, including 1 entities, in source file threebitadder.vhd
+    Info (12022): Found design unit 1: threeBitAdder-rtl
+    Info (12023): Found entity 1: threeBitAdder
+Info (12021): Found 2 design units, including 1 entities, in source file onebitcomparator.vhd
+    Info (12022): Found design unit 1: oneBitComparator-rtl
+    Info (12023): Found entity 1: oneBitComparator
+Info (12021): Found 2 design units, including 1 entities, in source file onebitadder.vhd
+    Info (12022): Found design unit 1: oneBitAdder-rtl
+    Info (12023): Found entity 1: oneBitAdder
+Info (12021): Found 2 design units, including 1 entities, in source file onebit4to1mux.vhd
+    Info (12022): Found design unit 1: onebit4to1mux-behav
+    Info (12023): Found entity 1: onebit4to1mux
+Info (12021): Found 2 design units, including 1 entities, in source file nbitshiftreg.vhd
+    Info (12022): Found design unit 1: nbitshiftreg-struc
+    Info (12023): Found entity 1: nbitshiftreg
+Info (12021): Found 2 design units, including 1 entities, in source file nbitreg.vhd
+    Info (12022): Found design unit 1: nbitreg-struc
+    Info (12023): Found entity 1: nbitreg
+Info (12021): Found 2 design units, including 1 entities, in source file nbitcomparator.vhd
+    Info (12022): Found design unit 1: nbitcomparator-rtl
+    Info (12023): Found entity 1: nbitcomparator
+Info (12021): Found 2 design units, including 1 entities, in source file nbit8to1mux.vhd
+    Info (12022): Found design unit 1: nbit8to1mux-behav
+    Info (12023): Found entity 1: nbit8to1mux
+Info (12021): Found 2 design units, including 1 entities, in source file nbit2to1mux.vhd
+    Info (12022): Found design unit 1: nbit2to1mux-behav
+    Info (12023): Found entity 1: nbit2to1mux
+Info (12021): Found 2 design units, including 1 entities, in source file enardff_2.vhd
+    Info (12022): Found design unit 1: enARdFF_2-rtl
+    Info (12023): Found entity 1: enARdFF_2
+Info (12021): Found 2 design units, including 1 entities, in source file dividebyn.vhd
+    Info (12022): Found design unit 1: DividebyN-behav
+    Info (12023): Found entity 1: DividebyN
+Info (12021): Found 2 design units, including 1 entities, in source file baudrategenerator.vhd
+    Info (12022): Found design unit 1: baudrategenerator-rtl
+    Info (12023): Found entity 1: baudrategenerator
+Info (12127): Elaborating entity "transmitter" for the top level hierarchy
+Info (12128): Elaborating entity "nbitreg" for hierarchy "nbitreg:TDR"
+Info (12128): Elaborating entity "enARdFF_2" for hierarchy "nbitreg:TDR|enARdFF_2:\reg:7:biti"
+Info (12128): Elaborating entity "nbitshiftreg" for hierarchy "nbitshiftreg:TSR"
+Info (12128): Elaborating entity "onebit4to1mux" for hierarchy "nbitshiftreg:TSR|onebit4to1mux:mux0"
+Info (12128): Elaborating entity "nbit2to1mux" for hierarchy "nbit2to1mux:boundmux"
+Info (12128): Elaborating entity "threebitcounter" for hierarchy "threebitcounter:counter"
+Info (12128): Elaborating entity "threeBitAdder" for hierarchy "threebitcounter:counter|threeBitAdder:adder"
+Info (12128): Elaborating entity "oneBitAdder" for hierarchy "threebitcounter:counter|threeBitAdder:adder|oneBitAdder:add2"
+Info (12128): Elaborating entity "nbitreg" for hierarchy "threebitcounter:counter|nbitreg:reg"
+Info (12128): Elaborating entity "nbitcomparator" for hierarchy "nbitcomparator:comparator"
+Info (12128): Elaborating entity "oneBitComparator" for hierarchy "nbitcomparator:comparator|oneBitComparator:comparatorMSB"
+Info (12128): Elaborating entity "transmitter_control" for hierarchy "transmitter_control:controller"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 26 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4717 megabytes
+    Info: Processing ended: Tue Dec 03 21:44:17 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+
