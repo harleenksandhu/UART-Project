@@ -1,13 +1,14 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
---PARALLEL/SERIAL IN SERIAL OUT
+--PARALLEL/SERIAL IN SERIAL/PARALLEL OUT
 ENTITY nbitshiftreg IS 
     GENERIC(n: integer:= 8);
     port(d_in : in std_logic_vector(n-1 downto 0); --parallel in
          shift_in: in std_logic; --serial in
          clk, load, shiftl, shiftr, reset_b: in std_logic;
-         s_out: out std_logic);
+         s_out: out std_logic;
+       d_out: out std_logic_vector(n-1 downto 0));
 END nbitshiftreg;
 
 architecture struc of nbitshiftreg is  
@@ -22,11 +23,11 @@ end component;
 
 component enardFF_2
     port(
-		i_resetBar	: IN	STD_LOGIC;
-		i_d		: IN	STD_LOGIC;
-		i_enable	: IN	STD_LOGIC;
-		i_clock		: IN	STD_LOGIC;
-		o_q, o_qBar	: OUT	STD_LOGIC);
+i_resetBar: IN STD_LOGIC;
+i_d: IN STD_LOGIC;
+i_enable: IN STD_LOGIC;
+i_clock: IN STD_LOGIC;
+o_q, o_qBar: OUT STD_LOGIC);
 end component;
 
 begin 
@@ -39,7 +40,7 @@ mux0: onebit4to1mux
              sel1 => shiftl, 
              sel2 => shiftr,
              o => mux_out(0));
-				 
+ 
 muxn_1: onebit4to1mux
     port map(i_0 => d_in(n-1), 
             i_1 => int_dout(n-2), 
@@ -48,17 +49,17 @@ muxn_1: onebit4to1mux
             sel1 => shiftl, 
             sel2 => shiftr,
             o => mux_out(n-1));
-				
+
 muxes: for i in n-2 downto 1 generate
     muxi: onebit4to1mux
         port map(i_0 => d_in(i), 
                  i_1 => int_dout(i-1), 
                  i_2 => int_dout(i+1),
-				 i_3 => '0', --default value 
+ i_3 => '0', --default value 
                  sel1 => shiftl, 
                  sel2 => shiftr, 
                  o => mux_out(i));
-	end generate;
+end generate;
 
 dffs: for i in n-1 downto 0 generate
     biti: enARdFF_2  
@@ -71,5 +72,6 @@ dffs: for i in n-1 downto 0 generate
     end generate;
   int_en <= (shiftr OR shiftl OR load);
   s_out <= int_dout(n-1) when shiftl ='1' else int_dout(0);
+  d_out <= int_dout;
 
 end struc;
